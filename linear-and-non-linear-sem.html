@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Linear and Non-linear SEM | R Notebook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Linear and Non-linear SEM | R Notebook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="https://github.com/QiuyuYu3/Psychology-Statistics-and-Codes-Notebook.git" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Linear and Non-linear SEM | R Notebook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Qiuyu Yu" />
+
+
+<meta name="date" content="2024-10-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Psychology Statistics and Codes Notebook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Outline</a></li>
+<li class="chapter" data-level="2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html"><i class="fa fa-check"></i><b>2</b> Linear and Non-linear SEM</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#what-is-the-direct-and-indirect-effect"><i class="fa fa-check"></i><b>2.1</b> What is the direct and indirect effect?</a></li>
+<li class="chapter" data-level="2.2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#nonlinear-sem-from-a-math-way"><i class="fa fa-check"></i><b>2.2</b> Nonlinear SEM from a math way</a></li>
+<li class="chapter" data-level="2.3" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#example-in-research"><i class="fa fa-check"></i><b>2.3</b> Example in Research</a></li>
+<li class="chapter" data-level="2.4" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#how-to-caculate-the-slope"><i class="fa fa-check"></i><b>2.4</b> How to caculate the slope?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#quadratic-curve"><i class="fa fa-check"></i><b>2.4.1</b> Quadratic curve</a></li>
+<li class="chapter" data-level="2.4.2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#cubic-curve"><i class="fa fa-check"></i><b>2.4.2</b> Cubic Curve</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#introducing-the-confounding-variable-w"><i class="fa fa-check"></i><b>2.5</b> Introducing the confounding variable W</a></li>
+<li class="chapter" data-level="2.6" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#what-is-the-relationship-between-moderated-mediation-and-nonlinear-sem"><i class="fa fa-check"></i><b>2.6</b> what is the relationship between moderated mediation and Nonlinear SEM?</a></li>
+<li class="chapter" data-level="2.7" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#practice-in-r-cross-sectional"><i class="fa fa-check"></i><b>2.7</b> Practice in R: Cross-sectional</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#centering-and-scaling"><i class="fa fa-check"></i><b>2.7.1</b> Centering and Scaling</a></li>
+<li class="chapter" data-level="2.7.2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#syntax-in-r"><i class="fa fa-check"></i><b>2.7.2</b> Syntax in R</a></li>
+<li class="chapter" data-level="2.7.3" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#r-syntax"><i class="fa fa-check"></i><b>2.7.3</b> R syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#if-x-is-dichotomous-draft"><i class="fa fa-check"></i><b>2.8</b> If X is dichotomous (draft)</a></li>
+<li class="chapter" data-level="2.9" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#which-model-fit-best-for-my-theory"><i class="fa fa-check"></i><b>2.9</b> Which model fit best for my theory?</a></li>
+<li class="chapter" data-level="2.10" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#reference"><i class="fa fa-check"></i><b>2.10</b> Reference</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Notebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="linear-and-non-linear-sem" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Linear and Non-linear SEM<a href="linear-and-non-linear-sem.html#linear-and-non-linear-sem" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>SEM is built on factor analysis and regression, and I’d recommend reviewing regression before you start. Of course it’s fine if you don’t have a lot of knowledge in this area, from an application standpoint you just need to understand the indicators as well as interpret the results.</p>
+<p>we use simple slope to get the path effect and calculate mediation effect, so it is very simple to label these effects. Let us starts with simple mediation model:</p>
+<p><span class="math display">\[
+X\to M: \\
+M = aX + i _{1} \\
+~\\
+Mediation(indirect)~Path: X\to M \to Y: \\
+Y = bM + i _{2} = b(aX + i _{1}) + i _{2} = abX + bi _{1} + i _{2}\\
+~\\
+Direct ~ Path: X \to Y:\\
+Y = cX + i _{3}\\
+~\\
+Total ~ Effect: \\
+Y = bM + i _{2} + cX + i _{3} = (ab + c)X + i \\
+\]</span></p>
+<div id="what-is-the-direct-and-indirect-effect" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is the direct and indirect effect?<a href="linear-and-non-linear-sem.html#what-is-the-direct-and-indirect-effect" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Direct effect: such as X - Y, X - M, M - Y, reveals the independent effect of the independent variable, will not influence by any other mediators.</li>
+<li>Indirect effect: such as X - M - Y, is X influence M and thus has impact on Y, which quantified as the product of a(X - M) and b (M - Y). When X changes by one unit, eventually Y will change ab units.</li>
+</ul>
+<p>Here, the slope of f(X) is what we want, representing the linear relationship between the variables because it quantifies the rate of change. We can get the slope by derivation.</p>
+<p>Let’s review the simple inverse rule first
+<span class="math display">\[
+f(X) = x^{n} \\
+f&#39;(x) = n\times x^{n-1}
+~\\
+Instantaneous ~ rate ~ of ~ change = \frac{\mathrm{d} y}{\mathrm{d} x} \\
+Y = log_{e}(X) = In(X)\\
+e^{Y} = X\\
+Derivation ~ of ~ this ~ equation:\\
+1 = e^{Y}\frac{\mathrm{d} y}{\mathrm{d} x} \\
+Y&#39; = \frac{1}{X}
+\]</span>
+Next, let’s derive the functions of M and Y.
+<span class="math display">\[
+X\to M: \\
+M&#39;(X) = a\\
+~\\
+Mediation(indirect)~Path: X\to M \to Y: \\
+Y&#39;(X) = ab\\
+~\\
+Direct ~ Path: X \to Y:\\
+Y&#39;(X) = c\\
+~\\
+Total ~ Effect: \\
+Y&#39;(X) = ab + c
+\]</span>
+Hence, we will know the indirect effect is ab, direct effect is c, and the total effect is ab + c. Depending on your theory, your model will change, and therefore the formula for the effect value will change, but you can derive the specific effect value from the formula.</p>
+<p>Note that since there is a causal relationship between X and M, M is not independent; X is not affected by any other factor and thus it is independent. Therefore, when estimating the indirect effect of X on Y, M should not be viewed as an independent variable, but rather transformed in the form of X.</p>
+</div>
+<div id="nonlinear-sem-from-a-math-way" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Nonlinear SEM from a math way<a href="linear-and-non-linear-sem.html#nonlinear-sem-from-a-math-way" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>when we are talking about nonlinear SEM, what we are talking about?
+some of them may be qudric or cubic, or looks like Y = e^X</p>
+<p>the plot will look like:</p>
+<p>Parabola
+<img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>S-shaped curve
+<img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="example-in-research" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Example in Research<a href="linear-and-non-linear-sem.html#example-in-research" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="how-to-caculate-the-slope" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> How to caculate the slope?<a href="linear-and-non-linear-sem.html#how-to-caculate-the-slope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Apparently we cannot just use ab as the indirect path effect, because the relationships between these variables are not linear. However,the derivative can be used to find the slope, or instantaneous slope, of a curve at a point.</p>
+<div id="quadratic-curve" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Quadratic curve<a href="linear-and-non-linear-sem.html#quadratic-curve" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s start by assuming that the relationship between X and M and Y is quadratic.
+<span class="math display">\[
+X\to M: \\
+M = a_{2}X^{2} + a_{1}X + i _{1} \\
+~\\
+Mediation(indirect)~Path: X\to M \to Y: \\
+Y = bM + i _{2} = b(a_{2}X^{2} + a_{1}X + i _{1}) + i _{2} = a_{1}bX + a_{2}bX^{2} +  bi _{1} + i _{2}\\
+~\\
+Direct ~ Path: X \to Y:\\
+Y = c_{2}X^{2} + c_{1}X + i _{3}\\
+~\\
+Total ~ Effect: \\
+Y = bM + i _{2} + c_{2}X^{2} + c_{1}X + i _{3} = (a_{1}b + c_{1})X + (a_{2}b + c_{2})X^2 + i _{2} + i _{3} \\
+\]</span></p>
+<p>Next perform the derivation.</p>
+<p><span class="math display">\[
+X\to M: \\
+M&#39;(X) = 2a_{2}X + a_{1}\\
+~\\
+Mediation(indirect)~Path: X\to M \to Y: \\
+Y&#39;(X) = a_{1}b + 2a_{2}bX = (a_{1}+2a_{2}X)b\\
+~\\
+Direct ~ Path: X \to Y:\\
+Y&#39;(X) = 2c_{2}X + c_{1}\\
+~\\
+Total~Effect:
+Y&#39;(X) = (a_{1}b + c_{1}) + 2(a_{2}b + c_{2})X
+\]</span></p>
+</div>
+<div id="cubic-curve" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Cubic Curve<a href="linear-and-non-linear-sem.html#cubic-curve" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following derivation will omit the constant term.</p>
+<p><span class="math display">\[
+X\to M: \\
+M = a_{3}X^3 + a_{2}X^{2} + a_{1}X \\
+~\\
+Mediation(indirect)~Path: X\to M \to Y: \\
+Y = bM + i _{2} = (a_{3}b + c_{3})X^3 + (a_{2}b + c_{2})X^{2} + (a_{1}b + c_{1})X\\
+~\\
+Direct ~ Path: X \to Y:\\
+Y = c_{3}X^{3} + c_{2}X^{2} + c_{1}X\\
+\]</span></p>
+<p>Next perform the derivation.</p>
+<p><span class="math display">\[
+X\to M: \\
+M&#39;(X) = 3a_{3}X^2 + 2a_{2}X + a_{1}\\
+~\\
+Mediation(indirect)~Path: X\to M \to Y: \\
+Y&#39;(X) = (a_{1}b + c_{1}) + 2X(a_{2}b + c_{2}) + 3X^2(a_{3}b + c_{3})\\
+~\\
+Direct ~ Path: X \to Y:\\
+Y&#39;(X) = 3c_{3}X^2 + 2c_{2}X + c_{1}
+\]</span></p>
+</div>
+</div>
+<div id="introducing-the-confounding-variable-w" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Introducing the confounding variable W<a href="linear-and-non-linear-sem.html#introducing-the-confounding-variable-w" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When the relationship between X - M and M - Y is linear, W does not affect the indirect effect since the constant term W will be omitted in the derivation. These relations are fixed for the indirect effect regardless of the value of W after controlling for W.</p>
+<p>However, when the M - Y relationship is nonlinear, W will affect the indirect effect.</p>
+<p><span class="math display">\[
+M = aX + d_{1}W\\
+Y = b_{1}M + b_{2}M^2 + d_{2}W\\
+Y&#39; = 2a^2b_{2}X + 2ab_{2}d_{1}W + ab_{1}
+\]</span></p>
+</div>
+<div id="what-is-the-relationship-between-moderated-mediation-and-nonlinear-sem" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> what is the relationship between moderated mediation and Nonlinear SEM?<a href="linear-and-non-linear-sem.html#what-is-the-relationship-between-moderated-mediation-and-nonlinear-sem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://gabriellajg.github.io/EPSY-579-R-Cookbook-for-SEM/" class="uri">https://gabriellajg.github.io/EPSY-579-R-Cookbook-for-SEM/</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="linear-and-non-linear-sem.html#cb1-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;nonlinear SEM.png&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="nonlinear%20SEM.png" alt="This is a caption for the image" width="70%" />
+<p class="caption">
+Figure 2.1: This is a caption for the image
+</p>
+</div>
+</div>
+<div id="practice-in-r-cross-sectional" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Practice in R: Cross-sectional<a href="linear-and-non-linear-sem.html#practice-in-r-cross-sectional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="centering-and-scaling" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Centering and Scaling<a href="linear-and-non-linear-sem.html#centering-and-scaling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Centering and scaling are done to change the intercept and slope, respectively, and the main purpose of doing so is so that the results can be interpreted better.
+For example, we sometimes care more about the trend than the baseline level, so we can subtract the value of the baseline level, which is centering. Moreover, centering can reduce nonessential multicollinearity. Scaling allows all variables to be compared at the same level, similar to ” standardization”.</p>
+</div>
+<div id="syntax-in-r" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Syntax in R<a href="linear-and-non-linear-sem.html#syntax-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Because the model is non-linear, so if you want to interpret the slope, normally we will use “representative values”, M±SD, which is similar to the interactions or moderators. Alternatives might be the 25th, 50th, and 75th percentiles.</p>
+<p>X2 is the quadratic of X, if you want to do the further analysis in Mplus you may need to do transform <code>x^2</code> to X2. Or you can just use (X^2) in R.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="linear-and-non-linear-sem.html#cb2-1" tabindex="-1"></a>NLModel <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb2-2"><a href="linear-and-non-linear-sem.html#cb2-2" tabindex="-1"></a><span class="st">Y ~ b * M + c1 * X + c2 * X2</span></span>
+<span id="cb2-3"><a href="linear-and-non-linear-sem.html#cb2-3" tabindex="-1"></a><span class="st">M ~ a1 * X + a2 * X2</span></span>
+<span id="cb2-4"><a href="linear-and-non-linear-sem.html#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="linear-and-non-linear-sem.html#cb2-5" tabindex="-1"></a><span class="st">M ~ 1</span></span>
+<span id="cb2-6"><a href="linear-and-non-linear-sem.html#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="linear-and-non-linear-sem.html#cb2-7" tabindex="-1"></a><span class="st">Low := -1.5  </span></span>
+<span id="cb2-8"><a href="linear-and-non-linear-sem.html#cb2-8" tabindex="-1"></a><span class="st">Mean := 0   </span></span>
+<span id="cb2-9"><a href="linear-and-non-linear-sem.html#cb2-9" tabindex="-1"></a><span class="st">High := 1.5   </span></span>
+<span id="cb2-10"><a href="linear-and-non-linear-sem.html#cb2-10" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="linear-and-non-linear-sem.html#cb2-11" tabindex="-1"></a><span class="st"># slope</span></span>
+<span id="cb2-12"><a href="linear-and-non-linear-sem.html#cb2-12" tabindex="-1"></a><span class="st">aLow := a1 + 2 * a2 * Low</span></span>
+<span id="cb2-13"><a href="linear-and-non-linear-sem.html#cb2-13" tabindex="-1"></a><span class="st">aMean := a1 + 2 * a2 * Mean</span></span>
+<span id="cb2-14"><a href="linear-and-non-linear-sem.html#cb2-14" tabindex="-1"></a><span class="st">aHigh := a1 + 2 * a2 * High</span></span>
+<span id="cb2-15"><a href="linear-and-non-linear-sem.html#cb2-15" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="linear-and-non-linear-sem.html#cb2-16" tabindex="-1"></a><span class="st"># define indirect effect</span></span>
+<span id="cb2-17"><a href="linear-and-non-linear-sem.html#cb2-17" tabindex="-1"></a><span class="st">abLow := b * aLow</span></span>
+<span id="cb2-18"><a href="linear-and-non-linear-sem.html#cb2-18" tabindex="-1"></a><span class="st">abMean := b * aMean</span></span>
+<span id="cb2-19"><a href="linear-and-non-linear-sem.html#cb2-19" tabindex="-1"></a><span class="st">abHigh := b * aHigh</span></span>
+<span id="cb2-20"><a href="linear-and-non-linear-sem.html#cb2-20" tabindex="-1"></a><span class="st">&#39;</span></span>
+<span id="cb2-21"><a href="linear-and-non-linear-sem.html#cb2-21" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="linear-and-non-linear-sem.html#cb2-22" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb2-23"><a href="linear-and-non-linear-sem.html#cb2-23" tabindex="-1"></a>NLModel.fit <span class="ot">=</span> <span class="fu">sem</span>(NLModel, <span class="at">data =</span> df, <span class="at">test=</span><span class="st">&quot;scaled.shifted&quot;</span>, <span class="at">estimator=</span><span class="st">&quot;MLR&quot;</span>, <span class="at">fixed.x =</span> <span class="cn">FALSE</span>, <span class="at">se=</span><span class="st">&quot;bootstrap&quot;</span>,</span>
+<span id="cb2-24"><a href="linear-and-non-linear-sem.html#cb2-24" tabindex="-1"></a><span class="at">bootstrap=</span><span class="dv">1000</span>, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, <span class="at">conditional.x =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-25"><a href="linear-and-non-linear-sem.html#cb2-25" tabindex="-1"></a><span class="fu">summary</span>(NLModel.fit, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="linear-and-non-linear-sem.html#cb3-1" tabindex="-1"></a><span class="fu">parameterEstimates</span>(NLModel.fit, <span class="at">boot.ci.type =</span> <span class="st">&quot;perc&quot;</span>, <span class="at">ci =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="linear-and-non-linear-sem.html#cb4-1" tabindex="-1"></a><span class="co"># extract parameters</span></span>
+<span id="cb4-2"><a href="linear-and-non-linear-sem.html#cb4-2" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">parameterEstimates</span>(NLModel.fit)</span>
+<span id="cb4-3"><a href="linear-and-non-linear-sem.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="linear-and-non-linear-sem.html#cb4-4" tabindex="-1"></a>i1 <span class="ot">&lt;-</span> params[params<span class="sc">$</span>lhs <span class="sc">==</span> <span class="st">&quot;M&quot;</span> <span class="sc">&amp;</span> params<span class="sc">$</span>op <span class="sc">==</span> <span class="st">&quot;~1&quot;</span>, <span class="st">&quot;est&quot;</span>]</span>
+<span id="cb4-5"><a href="linear-and-non-linear-sem.html#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="linear-and-non-linear-sem.html#cb4-6" tabindex="-1"></a><span class="co"># extract path coefficient</span></span>
+<span id="cb4-7"><a href="linear-and-non-linear-sem.html#cb4-7" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> params[params<span class="sc">$</span>label <span class="sc">==</span> <span class="st">&quot;a1&quot;</span>, <span class="st">&quot;est&quot;</span>]</span>
+<span id="cb4-8"><a href="linear-and-non-linear-sem.html#cb4-8" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> params[params<span class="sc">$</span>label <span class="sc">==</span> <span class="st">&quot;a2&quot;</span>, <span class="st">&quot;est&quot;</span>]</span>
+<span id="cb4-9"><a href="linear-and-non-linear-sem.html#cb4-9" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="linear-and-non-linear-sem.html#cb4-10" tabindex="-1"></a><span class="co"># calculate mediation M</span></span>
+<span id="cb4-11"><a href="linear-and-non-linear-sem.html#cb4-11" tabindex="-1"></a>MLow <span class="ot">&lt;-</span> i1 <span class="sc">+</span> a1 <span class="sc">*</span> Low <span class="sc">+</span> a2 <span class="sc">*</span> Low<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-12"><a href="linear-and-non-linear-sem.html#cb4-12" tabindex="-1"></a>MMean <span class="ot">&lt;-</span> i1 <span class="sc">+</span> a1 <span class="sc">*</span> Mean <span class="sc">+</span> a2 <span class="sc">*</span> Mean<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-13"><a href="linear-and-non-linear-sem.html#cb4-13" tabindex="-1"></a>MHigh <span class="ot">&lt;-</span> i1 <span class="sc">+</span> a1 <span class="sc">*</span> High <span class="sc">+</span> a2 <span class="sc">*</span> High<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-14"><a href="linear-and-non-linear-sem.html#cb4-14" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="linear-and-non-linear-sem.html#cb4-15" tabindex="-1"></a>MLow</span>
+<span id="cb4-16"><a href="linear-and-non-linear-sem.html#cb4-16" tabindex="-1"></a>MMean</span>
+<span id="cb4-17"><a href="linear-and-non-linear-sem.html#cb4-17" tabindex="-1"></a>MHigh</span></code></pre></div>
+</div>
+<div id="r-syntax" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> R syntax<a href="linear-and-non-linear-sem.html#r-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="linear-and-non-linear-sem.html#cb5-1" tabindex="-1"></a>df<span class="sc">$</span>X2 <span class="ot">&lt;-</span> df<span class="sc">$</span>X<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb5-2"><a href="linear-and-non-linear-sem.html#cb5-2" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X <span class="sc">+</span> X2, <span class="at">data =</span> df, <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb5-3"><a href="linear-and-non-linear-sem.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="linear-and-non-linear-sem.html#cb5-4" tabindex="-1"></a>model_probit <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X <span class="sc">+</span> X2, <span class="at">data =</span> df, <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;probit&quot;</span>))</span>
+<span id="cb5-5"><a href="linear-and-non-linear-sem.html#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="linear-and-non-linear-sem.html#cb5-6" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
+<span id="cb5-7"><a href="linear-and-non-linear-sem.html#cb5-7" tabindex="-1"></a><span class="fu">summary</span>(model_probit)</span></code></pre></div>
+</div>
+</div>
+<div id="if-x-is-dichotomous-draft" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> If X is dichotomous (draft)<a href="linear-and-non-linear-sem.html#if-x-is-dichotomous-draft" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, use dummy code (0, 1). Second, “quantify the indirect effect of X on Y via M as the instantaneous indirect effect when X is at its lowest coded value.”
+Consider we are using bootstrap, the inference or results will not change.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><span class="math display">\[
+Logit ~ Regression:\\
+logit(Y) = log(\frac{P(Y = 1)}{1-P(Y = 1)}) = log(\frac{P(Y = 1)}{P(Y = 0)})= bM + c&#39;X + \varepsilon_{Y}\\
+~\\
+Probit~Regression:\\
+\Phi^{-1} (P(Y = 1)) = bM + c&#39;X + \varepsilon_{Y}
+\]</span></p>
+<p>logit(Y) is a logistic regression transformation representing the log odds of Y=1 occurring, and P(Y = 1) means the chance of Y=1 occurring; the latter is the inverse function of the cumulative distribution function of the normal distribution and is used in the Probit model.</p>
+<p>$$
+log() = b_{0} + b_{1}x\
+= e^{b_{0} + b_{1}x} \
+p = = </p>
+<p>$$</p>
+<p>CDE: controlled direct effect, we control the M so that we can get direct effect.
+DE: direct effect</p>
+<p>$$
+CDE(m) = E[Y(1,m) - Y(0, m)| C = c]\
+DE = E[Y(1, M(0)) - Y (0, M(0)) | C = c] = \
+_{-}^{} { E[Y|C = c, X = 1, M = m] - E[Y|C = c, X = 0, M = m] } f(M|C = c, X = 0)M\</p>
+<p>$$</p>
+<p>Total indirect</p>
+<p><span class="math display">\[
+TIE = E[Y(1,M(1)) - Y(1, M(0))|C = c]\\
+= \int_{-\infty }^{\infty } E[Y|C = c, X = 1, M = m] \times f(M|C =c, X = 1) \partial M - \int_{-\infty }^{\infty } E[Y|C = c, X = 1, M = m] \times f(M|C =c, X = 0) \partial M
+\]</span></p>
+<p>Total effect:</p>
+<p><span class="math display">\[
+TE = E[Y(1) - Y(0)|C = c]\\
+=E[Y(1, M(1)) - Y(0, M(0))|C = c]
+\]</span></p>
+<p>pure indirect effect</p>
+<p><span class="math display">\[
+PIE = E[Y(0,M(1)) - Y(0,M(0))| C = c]
+\]</span></p>
+<p><span class="math display">\[
+probit(x, x^{*} ) = \frac{[\beta _{0} + \beta _{2}x + (\beta _{1} + \beta _{3}x)(\gamma _{0} + \gamma _{1}x^{*})]}{\sqrt{v(x)} }
+\]</span></p>
+<p>variance
+<span class="math display">\[
+v(x) = (\beta _{1} + \beta _{3}x)^{2} \sigma _{2}^{2} + 1
+\]</span></p>
+<p>We will use Average Causal Mediation Effect (ACME) and Monte Carlo simulation to calculate the mediation effect.</p>
+<p><span class="math display">\[
+indirect ~ effect:\\
+IE(x) = P(Y = 1 | X=x, M = M(x)) - P(Y = 1 | X = x, M = M(x^{*}))\\
+ACME = \frac{1}{n} \sum_{i=1}^{n}(P(Y_{i} = 1 |X_{i}, M(X_{i})) - P(Y_{i} = 1 | X_{i}, M(_{i}^{*} )))
+\]</span></p>
+</div>
+<div id="which-model-fit-best-for-my-theory" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Which model fit best for my theory?<a href="linear-and-non-linear-sem.html#which-model-fit-best-for-my-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are some ways you can decide use which model. The model you build is never 100% correct or perfect. State the reason when you decide to use a certain model.Complex models may not be the best.</p>
+<ul>
+<li>Based on your theory or experience.</li>
+<li>Based on the previous literature.</li>
+<li>Data driven: exploratory analysis. Build up several models and check the model fit, R square, plot, or do the model comparison.</li>
+</ul>
+</div>
+<div id="reference" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Reference<a href="linear-and-non-linear-sem.html#reference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hayes, A. F., &amp; Preacher, K. J. (2010). Quantifying and Testing Indirect Effects in Simple Mediation Models When the Constituent Paths Are Nonlinear. Multivariate Behavioral Research, 45(4), 627ג660. <a href="https://doi.org/10.1080/00273171.2010.498290" class="uri">https://doi.org/10.1080/00273171.2010.498290</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
