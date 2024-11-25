@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Psychology Statistics and Codes Notebook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Psychology Statistics and Codes Notebook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="https://github.com/QiuyuYu3/Psychology-Statistics-and-Codes-Notebook.git" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Psychology Statistics and Codes Notebook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Qiuyu Yu" />
+
+
+<meta name="date" content="2024-11-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="linear-and-non-linear-sem.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Psychology Statistics and Codes Notebook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html"><i class="fa fa-check"></i><b>1</b> fNIRS data analysis pipeline</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html#individual-level-analysis"><i class="fa fa-check"></i><b>1.1</b> Individual Level Analysis</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html#general-linear-model"><i class="fa fa-check"></i><b>1.1.1</b> General Linear Model</a></li>
+<li class="chapter" data-level="1.1.2" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html#further-multiple-regressors-contrasts"><i class="fa fa-check"></i><b>1.1.2</b> Further Multiple Regressors: Contrasts</a></li>
+<li class="chapter" data-level="1.1.3" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html#research-of-interest-roi"><i class="fa fa-check"></i><b>1.1.3</b> Research of Interest (ROI)</a></li>
+<li class="chapter" data-level="1.1.4" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html#averaged-wave-analysis"><i class="fa fa-check"></i><b>1.1.4</b> Averaged Wave Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html#group-level-results-linear-mixed-model-lmm"><i class="fa fa-check"></i><b>1.2</b> Group Level Results: Linear mixed model (LMM)</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="fnirs-data-analysis-pipeline.html"><a href="fnirs-data-analysis-pipeline.html#syntax-3"><i class="fa fa-check"></i><b>1.2.1</b> Syntax</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html"><i class="fa fa-check"></i><b>2</b> Linear and Non-linear SEM</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#what-is-the-direct-and-indirect-effect"><i class="fa fa-check"></i><b>2.1</b> What is the direct and indirect effect?</a></li>
+<li class="chapter" data-level="2.2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#nonlinear-sem-from-a-math-way"><i class="fa fa-check"></i><b>2.2</b> Nonlinear SEM from a math way</a></li>
+<li class="chapter" data-level="2.3" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#how-to-caculate-the-slope"><i class="fa fa-check"></i><b>2.3</b> How to caculate the slope?</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#quadratic-curve"><i class="fa fa-check"></i><b>2.3.1</b> Quadratic curve</a></li>
+<li class="chapter" data-level="2.3.2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#cubic-curve"><i class="fa fa-check"></i><b>2.3.2</b> Cubic Curve</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#introducing-the-confounding-variable-w"><i class="fa fa-check"></i><b>2.4</b> Introducing the confounding variable W</a></li>
+<li class="chapter" data-level="2.5" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#what-is-the-relationship-between-moderated-mediation-and-nonlinear-sem"><i class="fa fa-check"></i><b>2.5</b> what is the relationship between moderated mediation and Nonlinear SEM?</a></li>
+<li class="chapter" data-level="2.6" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#practice-in-r-cross-sectional"><i class="fa fa-check"></i><b>2.6</b> Practice in R: Cross-sectional</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#centering-and-scaling"><i class="fa fa-check"></i><b>2.6.1</b> Centering and Scaling</a></li>
+<li class="chapter" data-level="2.6.2" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#syntax-in-r"><i class="fa fa-check"></i><b>2.6.2</b> Syntax in R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#if-x-is-dichotomous-draft"><i class="fa fa-check"></i><b>2.7</b> If X is dichotomous (draft)</a></li>
+<li class="chapter" data-level="2.8" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#which-model-fit-best-for-my-theory"><i class="fa fa-check"></i><b>2.8</b> Which model fit best for my theory?</a></li>
+<li class="chapter" data-level="2.9" data-path="linear-and-non-linear-sem.html"><a href="linear-and-non-linear-sem.html#reference"><i class="fa fa-check"></i><b>2.9</b> Reference</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Psychology Statistics and Codes Notebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Psychology Statistics and Codes Notebook</h1>
+<p class="author"><em>Qiuyu Yu</em></p>
+<p class="date"><em>2024-11-24</em></p>
+</div>
+<div id="fnirs-data-analysis-pipeline" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> fNIRS data analysis pipeline<a href="fnirs-data-analysis-pipeline.html#fnirs-data-analysis-pipeline" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="fnirs-data-analysis-pipeline.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="fnirs-data-analysis-pipeline.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="fnirs-data-analysis-pipeline.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="fnirs-data-analysis-pipeline.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(broom) </span>
+<span id="cb1-5"><a href="fnirs-data-analysis-pipeline.html#cb1-5" tabindex="-1"></a><span class="fu">library</span>(purrr) </span>
+<span id="cb1-6"><a href="fnirs-data-analysis-pipeline.html#cb1-6" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-7"><a href="fnirs-data-analysis-pipeline.html#cb1-7" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="fnirs-data-analysis-pipeline.html#cb2-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;E:</span><span class="sc">\\</span><span class="st">Research Projects</span><span class="sc">\\</span><span class="st">YDI</span><span class="sc">\\</span><span class="st">fNIRS</span><span class="sc">\\</span><span class="st">DORRY_fNIRS_CLEAN_TIME.SERIES_Y.csv&quot;</span>)</span>
+<span id="cb2-2"><a href="fnirs-data-analysis-pipeline.html#cb2-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="fnirs-data-analysis-pipeline.html#cb2-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-4"><a href="fnirs-data-analysis-pipeline.html#cb2-4" tabindex="-1"></a>    <span class="at">Game =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Game), <span class="dv">0</span>, Game),</span>
+<span id="cb2-5"><a href="fnirs-data-analysis-pipeline.html#cb2-5" tabindex="-1"></a>    <span class="at">Valance =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Valance), <span class="dv">0</span>, Valance)</span>
+<span id="cb2-6"><a href="fnirs-data-analysis-pipeline.html#cb2-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div id="individual-level-analysis" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Individual Level Analysis<a href="fnirs-data-analysis-pipeline.html#individual-level-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="general-linear-model" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> General Linear Model<a href="fnirs-data-analysis-pipeline.html#general-linear-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we finally extract the data, or matrix, for the fNIRS data, we get matrix including ID, channels, Condition(factor), Time. Next, we perform GLM analysis on the observed data for each channel.</p>
+<p>Every channel’s formula will be look like:</p>
+<p><span class="math display">\[
+Y = \sum \beta _{i}x_{i} + \epsilon  = X\beta + \epsilon
+\]</span></p>
+<p>According to the GLM formula, Y is the observed data matrix (fNIRS signal, time series data T).
+Y is a vector of T*1.</p>
+<p>X represents the design matrix of <span class="math inline">\(x_{i}\)</span>, and <span class="math inline">\(x_{i}\)</span> contains stimuli, conditions, confounding factors(eg. noise), etc. X is a matrix of T*i.</p>
+<p>The matrix will be look like:</p>
+<p><span class="math display">\[
+\left[
+\begin{array}{c}
+Y_{1} \\
+Y_{2} \\
+\vdots \\
+Y_{T}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{cccc}
+x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1i} \\
+x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2i} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_{T1} &amp; x_{T2} &amp; \cdots &amp; x_{Ti}
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+\beta_{1} \\
+\beta_{2} \\
+\vdots \\
+\beta_{i}
+\end{array}
+\right]
++
+\left[
+\begin{array}{c}
+\epsilon_{1} \\
+\epsilon_{2} \\
+\vdots \\
+\epsilon_{T}
+\end{array}
+\right]
+\]</span></p>
+<p>The estimates of <span class="math inline">\(\beta\)</span> represent the coefficients of the GLM, which is what we want.Finding <span class="math inline">\(\beta\)</span> by the <a href="https://www.cuemath.com/data/least-squares/">least squares method</a>.</p>
+<p><span class="math display">\[
+\hat{\beta } = (X^{T}X)^{-1}X^{T}Y  
+\]</span></p>
+<p>Next we can construct dynamic blood flow response maps based on <a href="https://youtu.be/KuXjwB4LzSA?si=USSQMM8yjKjoQR7J">convolution</a> of experimental stimulus conditions.
+Since the principles of fMRI and fNIRS are almost the same, more detailed GLM and HRF construction can be referred to fMRI.
+<a href="https://mriquestions.com/general-linear-model.html" class="uri">https://mriquestions.com/general-linear-model.html</a></p>
+<div class="float">
+<img src="https://mriquestions.com/uploads/3/4/5/7/34572113/convolution-of-3-events_orig.gif" alt="Convolution of 3 Events" />
+<div class="figcaption">Convolution of 3 Events</div>
+</div>
+<div id="syntax" class="section level4 hasAnchor" number="1.1.1.1">
+<h4><span class="header-section-number">1.1.1.1</span> Syntax<a href="fnirs-data-analysis-pipeline.html#syntax" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Define the function for GLM.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="fnirs-data-analysis-pipeline.html#cb3-1" tabindex="-1"></a>fNIRS_GLM <span class="ot">&lt;-</span> <span class="cf">function</span>(ID, channel, input_data) {</span>
+<span id="cb3-2"><a href="fnirs-data-analysis-pipeline.html#cb3-2" tabindex="-1"></a>    <span class="fu">tryCatch</span>({</span>
+<span id="cb3-3"><a href="fnirs-data-analysis-pipeline.html#cb3-3" tabindex="-1"></a>        glm_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">as.formula</span>(<span class="fu">paste0</span>(<span class="st">&quot;`&quot;</span>, channel, <span class="st">&quot;` ~ Valance&quot;</span>)), <span class="at">data =</span> input_data)</span>
+<span id="cb3-4"><a href="fnirs-data-analysis-pipeline.html#cb3-4" tabindex="-1"></a>        </span>
+<span id="cb3-5"><a href="fnirs-data-analysis-pipeline.html#cb3-5" tabindex="-1"></a>        glm_summary <span class="ot">&lt;-</span> <span class="fu">tidy</span>(glm_model)</span>
+<span id="cb3-6"><a href="fnirs-data-analysis-pipeline.html#cb3-6" tabindex="-1"></a>        model_stats <span class="ot">&lt;-</span> <span class="fu">glance</span>(glm_model)</span>
+<span id="cb3-7"><a href="fnirs-data-analysis-pipeline.html#cb3-7" tabindex="-1"></a>        </span>
+<span id="cb3-8"><a href="fnirs-data-analysis-pipeline.html#cb3-8" tabindex="-1"></a>        glm_summary <span class="ot">&lt;-</span> glm_summary <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="fnirs-data-analysis-pipeline.html#cb3-9" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">Channel =</span> channel, <span class="at">ID =</span> ID) <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="fnirs-data-analysis-pipeline.html#cb3-10" tabindex="-1"></a>            <span class="fu">mutate</span>(<span class="at">df =</span> model_stats<span class="sc">$</span>df.residual, </span>
+<span id="cb3-11"><a href="fnirs-data-analysis-pipeline.html#cb3-11" tabindex="-1"></a>                   <span class="at">se =</span> std.error, </span>
+<span id="cb3-12"><a href="fnirs-data-analysis-pipeline.html#cb3-12" tabindex="-1"></a>                   <span class="at">t =</span> statistic,</span>
+<span id="cb3-13"><a href="fnirs-data-analysis-pipeline.html#cb3-13" tabindex="-1"></a>                   <span class="at">significant =</span> p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span>
+<span id="cb3-14"><a href="fnirs-data-analysis-pipeline.html#cb3-14" tabindex="-1"></a>        <span class="fu">return</span>(glm_summary)</span>
+<span id="cb3-15"><a href="fnirs-data-analysis-pipeline.html#cb3-15" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb3-16"><a href="fnirs-data-analysis-pipeline.html#cb3-16" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">tibble</span>(</span>
+<span id="cb3-17"><a href="fnirs-data-analysis-pipeline.html#cb3-17" tabindex="-1"></a>            <span class="at">estimate =</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb3-18"><a href="fnirs-data-analysis-pipeline.html#cb3-18" tabindex="-1"></a>            <span class="at">std.error =</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb3-19"><a href="fnirs-data-analysis-pipeline.html#cb3-19" tabindex="-1"></a>            <span class="at">statistic =</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb3-20"><a href="fnirs-data-analysis-pipeline.html#cb3-20" tabindex="-1"></a>            <span class="at">p.value =</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb3-21"><a href="fnirs-data-analysis-pipeline.html#cb3-21" tabindex="-1"></a>            <span class="at">Channel =</span> channel,</span>
+<span id="cb3-22"><a href="fnirs-data-analysis-pipeline.html#cb3-22" tabindex="-1"></a>            <span class="at">ID =</span> ID,</span>
+<span id="cb3-23"><a href="fnirs-data-analysis-pipeline.html#cb3-23" tabindex="-1"></a>            <span class="at">df =</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb3-24"><a href="fnirs-data-analysis-pipeline.html#cb3-24" tabindex="-1"></a>            <span class="at">se =</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb3-25"><a href="fnirs-data-analysis-pipeline.html#cb3-25" tabindex="-1"></a>            <span class="at">t =</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb3-26"><a href="fnirs-data-analysis-pipeline.html#cb3-26" tabindex="-1"></a>            <span class="at">significant =</span> <span class="cn">NA</span></span>
+<span id="cb3-27"><a href="fnirs-data-analysis-pipeline.html#cb3-27" tabindex="-1"></a>        ))</span>
+<span id="cb3-28"><a href="fnirs-data-analysis-pipeline.html#cb3-28" tabindex="-1"></a>    })</span>
+<span id="cb3-29"><a href="fnirs-data-analysis-pipeline.html#cb3-29" tabindex="-1"></a>}</span></code></pre></div>
+<p>Create the list for unique IDs and channels:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="fnirs-data-analysis-pipeline.html#cb4-1" tabindex="-1"></a>unique_ids <span class="ot">&lt;-</span> <span class="fu">unique</span>(data<span class="sc">$</span>ID)</span>
+<span id="cb4-2"><a href="fnirs-data-analysis-pipeline.html#cb4-2" tabindex="-1"></a>channel_columns <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="st">&quot;^S&quot;</span>, <span class="fu">colnames</span>(data), <span class="at">value =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>perform the GLM function:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="fnirs-data-analysis-pipeline.html#cb5-1" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">map_df</span>(unique_ids, <span class="cf">function</span>(ID) {</span>
+<span id="cb5-2"><a href="fnirs-data-analysis-pipeline.html#cb5-2" tabindex="-1"></a>    <span class="fu">map_df</span>(channel_columns, <span class="cf">function</span>(channel) {</span>
+<span id="cb5-3"><a href="fnirs-data-analysis-pipeline.html#cb5-3" tabindex="-1"></a>        input_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ID <span class="sc">==</span> <span class="sc">!!</span>ID)</span>
+<span id="cb5-4"><a href="fnirs-data-analysis-pipeline.html#cb5-4" tabindex="-1"></a>        <span class="fu">fNIRS_GLM</span>(ID, channel, input_data)</span>
+<span id="cb5-5"><a href="fnirs-data-analysis-pipeline.html#cb5-5" tabindex="-1"></a>    })</span>
+<span id="cb5-6"><a href="fnirs-data-analysis-pipeline.html#cb5-6" tabindex="-1"></a>})</span>
+<span id="cb5-7"><a href="fnirs-data-analysis-pipeline.html#cb5-7" tabindex="-1"></a><span class="fu">head</span>(results, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 11
+##    term   estimate std.error statistic p.value Channel    ID    df    se       t
+##    &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+##  1 (Inte…   -0.164     0.595   -0.276  0.783   S1_D1 …  1001  2779 0.595 -0.276 
+##  2 Valan…    8.82      2.93     3.01   0.00264 S1_D1 …  1001  2779 2.93   3.01  
+##  3 Valan…   -4.57      2.93    -1.56   0.119   S1_D1 …  1001  2779 2.93  -1.56  
+##  4 Valan…   -3.03      2.95    -1.03   0.303   S1_D1 …  1001  2779 2.95  -1.03  
+##  5 Valan…    3.22      2.92     1.10   0.270   S1_D1 …  1001  2779 2.92   1.10  
+##  6 (Inte…   -0.194     0.563   -0.345  0.730   S1_D8 …  1001  2779 0.563 -0.345 
+##  7 Valan…    8.84      2.78     3.19   0.00146 S1_D8 …  1001  2779 2.78   3.19  
+##  8 Valan…   -8.12      2.78    -2.92   0.00348 S1_D8 …  1001  2779 2.78  -2.92  
+##  9 Valan…   -0.227     2.79    -0.0815 0.935   S1_D8 …  1001  2779 2.79  -0.0815
+## 10 Valan…    5.35      2.76     1.94   0.0529  S1_D8 …  1001  2779 2.76   1.94  
+## # ℹ 1 more variable: significant &lt;lgl&gt;</code></pre>
+</div>
+</div>
+<div id="further-multiple-regressors-contrasts" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Further Multiple Regressors: Contrasts<a href="fnirs-data-analysis-pipeline.html#further-multiple-regressors-contrasts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Earlier we have obtained a vector of <span class="math inline">\(\beta\)</span> values corresponding to each experimental condition. Next, suppose we are interested in the contrast of positive vs. negative in the valance.</p>
+<p>We use “contrast vector” to quantify the individual experimental effects (think about the multifactorial experimental design). We extract the <span class="math inline">\(c^{T} * \beta\)</span> of the factor we are interested in. Then, we subtract them.</p>
+<p><span class="math display">\[
+c^{T}\beta = \begin{bmatrix}0  &amp; 1 &amp; ... &amp; 0\end{bmatrix} \begin{bmatrix} \beta _{1}\\ \beta _{2} \\... \\ \beta _{i} \end{bmatrix}= \beta _{2}\\
+~\\
+\beta_{2}~contrast ~ to ~\beta_{i}:\\
+c^{T}\beta = \begin{bmatrix}0  &amp; 1 &amp; ... &amp; -1\end{bmatrix} \begin{bmatrix} \beta _{1}\\ \beta _{2} \\... \\ \beta _{i} \end{bmatrix}= \beta _{2} - \beta_{i}
+\]</span></p>
+<p>Only simple comparisons are demonstrated here; depending on your experimental design you can perform more complex tests.</p>
+<p><strong>Reference:</strong>
+Robert Luke, Eric D. Larson, Maureen J. Shader, Hamish Innes-Brown, Lindsey Van Yper, Adrian K. C. Lee, Paul F. Sowman, David McAlpine, “Analysis methods for measuring passive auditory fNIRS responses generated by a block-design paradigm,” Neurophoton. 8(2) 025008 (22 May 2021) <a href="https://doi.org/10.1117/1.NPh.8.2.025008" class="uri">https://doi.org/10.1117/1.NPh.8.2.025008</a></p>
+<div id="syntax-1" class="section level4 hasAnchor" number="1.1.2.1">
+<h4><span class="header-section-number">1.1.2.1</span> Syntax<a href="fnirs-data-analysis-pipeline.html#syntax-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="fnirs-data-analysis-pipeline.html#cb7-1" tabindex="-1"></a>comparison_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb7-2"><a href="fnirs-data-analysis-pipeline.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="fnirs-data-analysis-pipeline.html#cb7-3" tabindex="-1"></a><span class="cf">for</span> (ID <span class="cf">in</span> unique_ids) {</span>
+<span id="cb7-4"><a href="fnirs-data-analysis-pipeline.html#cb7-4" tabindex="-1"></a>  <span class="cf">for</span> (Channel <span class="cf">in</span> channel_columns) {</span>
+<span id="cb7-5"><a href="fnirs-data-analysis-pipeline.html#cb7-5" tabindex="-1"></a>    neutral_row <span class="ot">&lt;-</span> results[results<span class="sc">$</span>ID <span class="sc">==</span> ID <span class="sc">&amp;</span> results<span class="sc">$</span>Channel <span class="sc">==</span> Channel <span class="sc">&amp;</span> results<span class="sc">$</span>term <span class="sc">==</span> <span class="st">&quot;ValanceNeutFace&quot;</span>, <span class="st">&quot;estimate&quot;</span>]</span>
+<span id="cb7-6"><a href="fnirs-data-analysis-pipeline.html#cb7-6" tabindex="-1"></a>    positive_row <span class="ot">&lt;-</span> results[results<span class="sc">$</span>ID <span class="sc">==</span> ID <span class="sc">&amp;</span> results<span class="sc">$</span>Channel <span class="sc">==</span> Channel <span class="sc">&amp;</span> results<span class="sc">$</span>term <span class="sc">==</span> <span class="st">&quot;ValancePosFace&quot;</span>, <span class="st">&quot;estimate&quot;</span>]</span>
+<span id="cb7-7"><a href="fnirs-data-analysis-pipeline.html#cb7-7" tabindex="-1"></a>    </span>
+<span id="cb7-8"><a href="fnirs-data-analysis-pipeline.html#cb7-8" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(neutral_row) <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(positive_row) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb7-9"><a href="fnirs-data-analysis-pipeline.html#cb7-9" tabindex="-1"></a>      contrast_estimate <span class="ot">&lt;-</span> neutral_row <span class="sc">-</span> positive_row</span>
+<span id="cb7-10"><a href="fnirs-data-analysis-pipeline.html#cb7-10" tabindex="-1"></a>      </span>
+<span id="cb7-11"><a href="fnirs-data-analysis-pipeline.html#cb7-11" tabindex="-1"></a>      comparison_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(comparison_results, <span class="fu">data.frame</span>(</span>
+<span id="cb7-12"><a href="fnirs-data-analysis-pipeline.html#cb7-12" tabindex="-1"></a>        <span class="at">ID =</span> ID,</span>
+<span id="cb7-13"><a href="fnirs-data-analysis-pipeline.html#cb7-13" tabindex="-1"></a>        <span class="at">Channel =</span> Channel,</span>
+<span id="cb7-14"><a href="fnirs-data-analysis-pipeline.html#cb7-14" tabindex="-1"></a>        <span class="at">Contrast =</span> <span class="st">&quot;Neutral - Positive&quot;</span>,</span>
+<span id="cb7-15"><a href="fnirs-data-analysis-pipeline.html#cb7-15" tabindex="-1"></a>        <span class="at">Estimate =</span> contrast_estimate</span>
+<span id="cb7-16"><a href="fnirs-data-analysis-pipeline.html#cb7-16" tabindex="-1"></a>      ))</span>
+<span id="cb7-17"><a href="fnirs-data-analysis-pipeline.html#cb7-17" tabindex="-1"></a>    }</span>
+<span id="cb7-18"><a href="fnirs-data-analysis-pipeline.html#cb7-18" tabindex="-1"></a>  }</span>
+<span id="cb7-19"><a href="fnirs-data-analysis-pipeline.html#cb7-19" tabindex="-1"></a>}</span>
+<span id="cb7-20"><a href="fnirs-data-analysis-pipeline.html#cb7-20" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="fnirs-data-analysis-pipeline.html#cb7-21" tabindex="-1"></a><span class="fu">head</span>(comparison_results, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##      ID   Channel           Contrast   estimate
+## 1  1001 S1_D1 hbo Neutral - Positive  -7.792860
+## 2  1001 S1_D8 hbo Neutral - Positive -13.464875
+## 3  1001 S1_D9 hbo Neutral - Positive -10.348189
+## 4  1001 S2_D1 hbo Neutral - Positive  -5.387112
+## 5  1001 S2_D3 hbo Neutral - Positive  -5.952495
+## 6  1001 S2_D9 hbo Neutral - Positive   1.780545
+## 7  1001 S3_D1 hbo Neutral - Positive  -3.158280
+## 8  1001 S3_D3 hbo Neutral - Positive  -6.933208
+## 9  1001 S4_D2 hbo Neutral - Positive  -2.495172
+## 10 1001 S4_D3 hbo Neutral - Positive  -5.174260</code></pre>
+<p>contrast by using emm</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="fnirs-data-analysis-pipeline.html#cb9-1" tabindex="-1"></a>comparison_results_2 <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="fnirs-data-analysis-pipeline.html#cb9-2" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">!=</span> <span class="st">&quot;(Intercept)&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="fnirs-data-analysis-pipeline.html#cb9-3" tabindex="-1"></a>  <span class="fu">group_by</span>(Channel) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="fnirs-data-analysis-pipeline.html#cb9-4" tabindex="-1"></a>  <span class="fu">do</span>({</span>
+<span id="cb9-5"><a href="fnirs-data-analysis-pipeline.html#cb9-5" tabindex="-1"></a>    lm_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(estimate <span class="sc">~</span> term, <span class="at">data =</span> .)</span>
+<span id="cb9-6"><a href="fnirs-data-analysis-pipeline.html#cb9-6" tabindex="-1"></a>    emm <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(lm_model, <span class="sc">~</span> term) </span>
+<span id="cb9-7"><a href="fnirs-data-analysis-pipeline.html#cb9-7" tabindex="-1"></a>    contrast_results <span class="ot">&lt;-</span> <span class="fu">contrast</span>(emm, <span class="at">method =</span> <span class="st">&quot;pairwise&quot;</span>) </span>
+<span id="cb9-8"><a href="fnirs-data-analysis-pipeline.html#cb9-8" tabindex="-1"></a>    <span class="fu">tidy</span>(contrast_results)</span>
+<span id="cb9-9"><a href="fnirs-data-analysis-pipeline.html#cb9-9" tabindex="-1"></a>  })</span>
+<span id="cb9-10"><a href="fnirs-data-analysis-pipeline.html#cb9-10" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="fnirs-data-analysis-pipeline.html#cb9-11" tabindex="-1"></a><span class="fu">print</span>(comparison_results_2)</span></code></pre></div>
+<pre><code>## # A tibble: 576 × 9
+## # Groups:   Channel [96]
+##    Channel     term  contrast      null.value estimate std.error    df statistic
+##    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
+##  1 S10_D11 hbo term  ValanceNegFa…          0   -1.32       1.20   208    -1.10 
+##  2 S10_D11 hbo term  ValanceNegFa…          0    0.921      1.20   208     0.767
+##  3 S10_D11 hbo term  ValanceNegFa…          0    0.412      1.20   208     0.343
+##  4 S10_D11 hbo term  ValanceNeutF…          0    2.24       1.20   208     1.87 
+##  5 S10_D11 hbo term  ValanceNeutF…          0    1.73       1.20   208     1.45 
+##  6 S10_D11 hbo term  ValancePlace…          0   -0.509      1.20   208    -0.424
+##  7 S10_D11 hbr term  ValanceNegFa…          0    1.89       1.21   208     1.56 
+##  8 S10_D11 hbr term  ValanceNegFa…          0    0.168      1.21   208     0.138
+##  9 S10_D11 hbr term  ValanceNegFa…          0    1.18       1.21   208     0.972
+## 10 S10_D11 hbr term  ValanceNeutF…          0   -1.72       1.21   208    -1.42 
+## # ℹ 566 more rows
+## # ℹ 1 more variable: adj.p.value &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div id="research-of-interest-roi" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Research of Interest (ROI)<a href="fnirs-data-analysis-pipeline.html#research-of-interest-roi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Depends on your research interest, define the cluster of ROI.</p>
+<blockquote>
+<p>Region-of-interest calculation was then performed by weighted averaging of the individual beta values across channels within each region, with weights equal to the inverse of the standard error of the GLM fit for each channel (Santosa et al., 2018).</p>
+</blockquote>
+<p>So we get GLM results, then we need to get weight for each channels so that we can have the value of ROI.</p>
+<p><span class="math display">\[
+\omega _{i} = \frac{1}{SE_{i}}
+\]</span></p>
+<p>Now we have the weight for each channel. The value of each data point in the weighted average is multiplied by the corresponding weight, and then these products are summed and divided by the sum of the weights.</p>
+<p><span class="math display">\[
+\frac{\sum_{i=1}^{N}\omega _{i}\times \beta _{i}}{\sum_{j = 1}^{N} \frac{1}{SE_{j}} }
+\]</span></p>
+<p><strong>Reference:</strong>
+Shader, M. J., Luke, R., Gouailhardou, N., &amp; McKay, C. M. (2021). The use of broad vs restricted regions of interest in functional near-infrared spectroscopy for measuring cortical activation to auditory-only and visual-only speech. Hearing Research, 406, 108256. <a href="https://doi.org/10.1016/j.heares.2021.108256" class="uri">https://doi.org/10.1016/j.heares.2021.108256</a></p>
+<div id="syntax-2" class="section level4 hasAnchor" number="1.1.3.1">
+<h4><span class="header-section-number">1.1.3.1</span> Syntax<a href="fnirs-data-analysis-pipeline.html#syntax-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="fnirs-data-analysis-pipeline.html#cb11-1" tabindex="-1"></a>roi_channels <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb11-2"><a href="fnirs-data-analysis-pipeline.html#cb11-2" tabindex="-1"></a>  <span class="st">&quot;Inferior_frontal_R&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S13_D11 hbo&quot;</span>, <span class="st">&quot;S13_D11 hbr&quot;</span>),</span>
+<span id="cb11-3"><a href="fnirs-data-analysis-pipeline.html#cb11-3" tabindex="-1"></a>  <span class="st">&quot;Inferior_frontal_L&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S5_D3 hbo&quot;</span>, <span class="st">&quot;S5_D3 hbr&quot;</span>),</span>
+<span id="cb11-4"><a href="fnirs-data-analysis-pipeline.html#cb11-4" tabindex="-1"></a>  <span class="st">&quot;Middle_frontal_R&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S9_D11 hbo&quot;</span>, <span class="st">&quot;S9_D11 hbr&quot;</span>, <span class="st">&quot;S10_D11 hbo&quot;</span>, <span class="st">&quot;S10_D11 hbr&quot;</span>, <span class="st">&quot;S12_D11 hbo&quot;</span>, <span class="st">&quot;S12_D11 hbr&quot;</span>, <span class="st">&quot;S12_D12 hbo&quot;</span>, <span class="st">&quot;S12_D12 hbr&quot;</span>, <span class="st">&quot;S14_D12 hbo&quot;</span>, <span class="st">&quot;S14_D12 hbr&quot;</span>),</span>
+<span id="cb11-5"><a href="fnirs-data-analysis-pipeline.html#cb11-5" tabindex="-1"></a>  <span class="st">&quot;Middle_frontal_L&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S2_D3 hbo&quot;</span>, <span class="st">&quot;S2_D3 hbr&quot;</span>, <span class="st">&quot;S3_D3 hbo&quot;</span>, <span class="st">&quot;S3_D3 hbr&quot;</span>, <span class="st">&quot;S4_D2 hbo&quot;</span>, <span class="st">&quot;S4_D2 hbr&quot;</span>, <span class="st">&quot;S4_D3 hbo&quot;</span>, <span class="st">&quot;S4_D3 hbr&quot;</span>, <span class="st">&quot;S4_D5 hbo&quot;</span>, <span class="st">&quot;S4_D5 hbr&quot;</span>, <span class="st">&quot;S6_D2 hbo&quot;</span>, <span class="st">&quot;S6_D2 hbr&quot;</span>, <span class="st">&quot;S6_D5 hbo&quot;</span>, <span class="st">&quot;S6_D5 hbr&quot;</span>),</span>
+<span id="cb11-6"><a href="fnirs-data-analysis-pipeline.html#cb11-6" tabindex="-1"></a>  <span class="st">&quot;Superior_frontal_R&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S1_D8 hbo&quot;</span>, <span class="st">&quot;S1_D8 hbr&quot;</span>, <span class="st">&quot;S1_D9 hbo&quot;</span>, <span class="st">&quot;S1_D9 hbr&quot;</span>, <span class="st">&quot;S9_D8 hbo&quot;</span>, <span class="st">&quot;S9_D8 hbr&quot;</span>, <span class="st">&quot;S9_D9 hbo&quot;</span>, <span class="st">&quot;S9_D9 hbr&quot;</span>, <span class="st">&quot;S11_D9 hbo&quot;</span>, <span class="st">&quot;S11_D9 hbr&quot;</span>, <span class="st">&quot;S11_D10 hbo&quot;</span>, <span class="st">&quot;S11_D10 hbr&quot;</span>, <span class="st">&quot;S12_D10 hbo&quot;</span>, <span class="st">&quot;S12_D10 hbr&quot;</span>, <span class="st">&quot;S14_D10 hbo&quot;</span>, <span class="st">&quot;S14_D10 hbr&quot;</span>, <span class="st">&quot;S14_D4 hbo&quot;</span>, <span class="st">&quot;S14_D4 hbr&quot;</span>, <span class="st">&quot;S11_D4 hbo&quot;</span>, <span class="st">&quot;S11_D4 hbr&quot;</span>),</span>
+<span id="cb11-7"><a href="fnirs-data-analysis-pipeline.html#cb11-7" tabindex="-1"></a>  <span class="st">&quot;Superior_frontal_L&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S1_D1 hbo&quot;</span>, <span class="st">&quot;S1_D1 hbr&quot;</span>, <span class="st">&quot;S1_D9 hbo&quot;</span>, <span class="st">&quot;S1_D9 hbr&quot;</span>, <span class="st">&quot;S11_D2 hbo&quot;</span>, <span class="st">&quot;S11_D2 hbr&quot;</span>, <span class="st">&quot;S11_D4 hbo&quot;</span>, <span class="st">&quot;S11_D4 hbr&quot;</span>, <span class="st">&quot;S11_D9 hbo&quot;</span>, <span class="st">&quot;S11_D9 hbr&quot;</span>, <span class="st">&quot;S2_D1 hbo&quot;</span>, <span class="st">&quot;S2_D1 hbr&quot;</span>, <span class="st">&quot;S2_D9 hbo&quot;</span>, <span class="st">&quot;S2_D9 hbr&quot;</span>, <span class="st">&quot;S6_D2 hbo&quot;</span>, <span class="st">&quot;S6_D2 hbr&quot;</span>, <span class="st">&quot;S6_D4 hbo&quot;</span>, <span class="st">&quot;S6_D4 hbr&quot;</span>),</span>
+<span id="cb11-8"><a href="fnirs-data-analysis-pipeline.html#cb11-8" tabindex="-1"></a>  <span class="st">&quot;Remainder_parietal_lobe_R&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S15_D14 hbo&quot;</span>, <span class="st">&quot;S15_D14 hbr&quot;</span>, <span class="st">&quot;S15_D15 hbo&quot;</span>, <span class="st">&quot;S15_D15 hbr&quot;</span>, <span class="st">&quot;S16_D14 hbo&quot;</span>, <span class="st">&quot;S16_D14 hbr&quot;</span>, <span class="st">&quot;S16_D15 hbo&quot;</span>, <span class="st">&quot;S16_D15 hbr&quot;</span>),</span>
+<span id="cb11-9"><a href="fnirs-data-analysis-pipeline.html#cb11-9" tabindex="-1"></a>  <span class="st">&quot;Remainder_parietal_lobe_L&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;S7_D6 hbo&quot;</span>, <span class="st">&quot;S7_D6 hbr&quot;</span>, <span class="st">&quot;S7_D7 hbo&quot;</span>, <span class="st">&quot;S7_D7 hbr&quot;</span>, <span class="st">&quot;S8_D6 hbo&quot;</span>, <span class="st">&quot;S8_D6 hbr&quot;</span>, <span class="st">&quot;S8_D7 hbo&quot;</span>, <span class="st">&quot;S8_D7 hbr&quot;</span>)</span>
+<span id="cb11-10"><a href="fnirs-data-analysis-pipeline.html#cb11-10" tabindex="-1"></a>)</span>
+<span id="cb11-11"><a href="fnirs-data-analysis-pipeline.html#cb11-11" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="fnirs-data-analysis-pipeline.html#cb11-12" tabindex="-1"></a>ROI_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Inferior_frontal_R&quot;</span>, <span class="st">&quot;Inferior_frontal_L&quot;</span>, <span class="st">&quot;Middle_frontal_R&quot;</span>, <span class="st">&quot;Middle_frontal_L&quot;</span>, <span class="st">&quot;Superior_frontal_R&quot;</span>, <span class="st">&quot;Superior_frontal_L&quot;</span>, <span class="st">&quot;Remainder_parietal_lobe_R&quot;</span>, <span class="st">&quot;Remainder_parietal_lobe_L&quot;</span>)</span></code></pre></div>
+<p>We have defined the cluster of ROI and get the GLM results for each channel and participant.
+We pull out part of the results and calculate the weight first.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="fnirs-data-analysis-pipeline.html#cb12-1" tabindex="-1"></a>ROI_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb12-2"><a href="fnirs-data-analysis-pipeline.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="fnirs-data-analysis-pipeline.html#cb12-3" tabindex="-1"></a><span class="cf">for</span> (id <span class="cf">in</span> unique_ids) {</span>
+<span id="cb12-4"><a href="fnirs-data-analysis-pipeline.html#cb12-4" tabindex="-1"></a>  <span class="co"># filter each ID&#39;s each ROI</span></span>
+<span id="cb12-5"><a href="fnirs-data-analysis-pipeline.html#cb12-5" tabindex="-1"></a>  id_results <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ID <span class="sc">==</span> id)</span>
+<span id="cb12-6"><a href="fnirs-data-analysis-pipeline.html#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="fnirs-data-analysis-pipeline.html#cb12-7" tabindex="-1"></a>  <span class="cf">for</span> (roi <span class="cf">in</span> ROI_list) {</span>
+<span id="cb12-8"><a href="fnirs-data-analysis-pipeline.html#cb12-8" tabindex="-1"></a>    roi_channels_list <span class="ot">&lt;-</span> roi_channels[[roi]]</span>
+<span id="cb12-9"><a href="fnirs-data-analysis-pipeline.html#cb12-9" tabindex="-1"></a>   <span class="co"># add Chroma channel </span></span>
+<span id="cb12-10"><a href="fnirs-data-analysis-pipeline.html#cb12-10" tabindex="-1"></a>    roi_results <span class="ot">&lt;-</span> id_results <span class="sc">%&gt;%</span></span>
+<span id="cb12-11"><a href="fnirs-data-analysis-pipeline.html#cb12-11" tabindex="-1"></a>      <span class="fu">filter</span>(Channel <span class="sc">%in%</span> roi_channels_list) <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="fnirs-data-analysis-pipeline.html#cb12-12" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">Chroma =</span> <span class="fu">ifelse</span>(<span class="fu">grepl</span>(<span class="st">&quot;hbo$&quot;</span>, Channel), <span class="st">&quot;hbo&quot;</span>, <span class="st">&quot;hbr&quot;</span>)) </span>
+<span id="cb12-13"><a href="fnirs-data-analysis-pipeline.html#cb12-13" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="fnirs-data-analysis-pipeline.html#cb12-14" tabindex="-1"></a>    weighted_results <span class="ot">&lt;-</span> roi_results <span class="sc">%&gt;%</span></span>
+<span id="cb12-15"><a href="fnirs-data-analysis-pipeline.html#cb12-15" tabindex="-1"></a>      <span class="fu">group_by</span>(term, Chroma) <span class="sc">%&gt;%</span>  </span>
+<span id="cb12-16"><a href="fnirs-data-analysis-pipeline.html#cb12-16" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">weight =</span> <span class="dv">1</span> <span class="sc">/</span> se) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-17"><a href="fnirs-data-analysis-pipeline.html#cb12-17" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">weight =</span> weight <span class="sc">/</span> <span class="fu">sum</span>(weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-18"><a href="fnirs-data-analysis-pipeline.html#cb12-18" tabindex="-1"></a>      <span class="fu">summarise</span>(</span>
+<span id="cb12-19"><a href="fnirs-data-analysis-pipeline.html#cb12-19" tabindex="-1"></a>        <span class="at">Weighted_Beta =</span> <span class="fu">sum</span>(estimate <span class="sc">*</span> weight, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb12-20"><a href="fnirs-data-analysis-pipeline.html#cb12-20" tabindex="-1"></a>        <span class="at">se =</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((weight<span class="sc">^</span><span class="dv">2</span>) <span class="sc">*</span> se<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)), </span>
+<span id="cb12-21"><a href="fnirs-data-analysis-pipeline.html#cb12-21" tabindex="-1"></a>        <span class="at">t =</span> Weighted_Beta <span class="sc">/</span> se,</span>
+<span id="cb12-22"><a href="fnirs-data-analysis-pipeline.html#cb12-22" tabindex="-1"></a>        <span class="at">dfe =</span> <span class="fu">mean</span>(df, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="co"># df for each channel</span></span>
+<span id="cb12-23"><a href="fnirs-data-analysis-pipeline.html#cb12-23" tabindex="-1"></a>        <span class="at">p =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="sc">-</span><span class="fu">abs</span>(t), <span class="at">df =</span> dfe), </span>
+<span id="cb12-24"><a href="fnirs-data-analysis-pipeline.html#cb12-24" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span> </span>
+<span id="cb12-25"><a href="fnirs-data-analysis-pipeline.html#cb12-25" tabindex="-1"></a>      )</span>
+<span id="cb12-26"><a href="fnirs-data-analysis-pipeline.html#cb12-26" tabindex="-1"></a>    weighted_results <span class="ot">&lt;-</span> weighted_results <span class="sc">%&gt;%</span></span>
+<span id="cb12-27"><a href="fnirs-data-analysis-pipeline.html#cb12-27" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">format</span>(p, <span class="at">scientific =</span> <span class="cn">FALSE</span>, <span class="at">digits =</span> <span class="dv">4</span>))</span>
+<span id="cb12-28"><a href="fnirs-data-analysis-pipeline.html#cb12-28" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="fnirs-data-analysis-pipeline.html#cb12-29" tabindex="-1"></a>    weighted_results <span class="ot">&lt;-</span> weighted_results <span class="sc">%&gt;%</span></span>
+<span id="cb12-30"><a href="fnirs-data-analysis-pipeline.html#cb12-30" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">ROI =</span> roi, <span class="at">ID =</span> id)</span>
+<span id="cb12-31"><a href="fnirs-data-analysis-pipeline.html#cb12-31" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="fnirs-data-analysis-pipeline.html#cb12-32" tabindex="-1"></a>    ROI_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(ROI_results, weighted_results)</span>
+<span id="cb12-33"><a href="fnirs-data-analysis-pipeline.html#cb12-33" tabindex="-1"></a>  }</span>
+<span id="cb12-34"><a href="fnirs-data-analysis-pipeline.html#cb12-34" tabindex="-1"></a>}</span>
+<span id="cb12-35"><a href="fnirs-data-analysis-pipeline.html#cb12-35" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="fnirs-data-analysis-pipeline.html#cb12-36" tabindex="-1"></a><span class="fu">head</span>(ROI_results, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 9
+##    term            Chroma Weighted_Beta    se      t   dfe p       ROI        ID
+##    &lt;chr&gt;           &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;
+##  1 (Intercept)     hbo           0.0980 0.545  0.180  2779 0.85737 Inferi…  1001
+##  2 (Intercept)     hbr          -0.144  0.548 -0.264  2779 0.79201 Inferi…  1001
+##  3 ValanceNegFace  hbo           1.73   2.69   0.646  2779 0.51856 Inferi…  1001
+##  4 ValanceNegFace  hbr          -3.40   2.70  -1.26   2779 0.20827 Inferi…  1001
+##  5 ValanceNeutFace hbo          -5.54   2.69  -2.06   2779 0.03941 Inferi…  1001
+##  6 ValanceNeutFace hbr           0.420  2.70   0.156  2779 0.87640 Inferi…  1001
+##  7 ValancePlace    hbo          -3.97   2.70  -1.47   2779 0.14196 Inferi…  1001
+##  8 ValancePlace    hbr           1.36   2.71   0.502  2779 0.61569 Inferi…  1001
+##  9 ValancePosFace  hbo           5.71   2.67   2.14   2779 0.03283 Inferi…  1001
+## 10 ValancePosFace  hbr           5.26   2.69   1.96   2779 0.05064 Inferi…  1001</code></pre>
+</div>
+</div>
+<div id="averaged-wave-analysis" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Averaged Wave Analysis<a href="fnirs-data-analysis-pipeline.html#averaged-wave-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://mne.tools/mne-nirs/stable/auto_examples/general/plot_16_waveform_group.html" class="uri">https://mne.tools/mne-nirs/stable/auto_examples/general/plot_16_waveform_group.html</a></p>
+</div>
+</div>
+<div id="group-level-results-linear-mixed-model-lmm" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Group Level Results: Linear mixed model (LMM)<a href="fnirs-data-analysis-pipeline.html#group-level-results-linear-mixed-model-lmm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Normally applies to between subjects’ analysis.Advanced alternative to t-test or ANOVA.</p>
+<blockquote>
+<p>Although there are different alternatives for these analyses, the LMM approach used in this study has three main advantages over the other methods such as t-test, ANOVA, or classical linear regression model as it provides: (i) to control type-I error rate by allowing all the variables at the same time, and (ii) handling correlation among the repeated measures which is not possible with the other mentioned methods as their implementation requires the independence among observations in the data, and (iii) to deal with the complexity of the neural data sets, including many levels in which some of their categorical responses relate to the structure of brain imaging technologies. Further, as many neural data tend to include observations that behave differently than the rest of the data points due to motion artifacts or uncontrolled errors, the influence of outliers is aimed to be decreased during the model parameter estimates through a robust LMM approach.</p>
+</blockquote>
+<p><span class="math display">\[
+Y_{i} = X_{i}\beta + Z_{i}u_{i} + \varepsilon _{i}\\
+u_{i} ~ N(0,D)\\
+\varepsilon _{i} ~ N(0,R_{i})
+\]</span>
+Similar to GLM, <span class="math inline">\(X_{i}\beta\)</span> is the fixed effect, while <span class="math inline">\(Z_{i}u_{i}\)</span> and <span class="math inline">\(\varepsilon _{i}\)</span> are the random effects.</p>
+<p><strong>Reference:</strong>
+Cakar, S., &amp; Gokalp Yavuz, F. (2023). Nested and robust modeling techniques for fNIRS data with demographics and experiment related factors in n-back task. Neuroscience Research, 186, 59-72. <a href="https://doi.org/10.1016/j.neures.2022.10.007" class="uri">https://doi.org/10.1016/j.neures.2022.10.007</a></p>
+<div id="syntax-3" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Syntax<a href="fnirs-data-analysis-pipeline.html#syntax-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="fnirs-data-analysis-pipeline.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb14-2"><a href="fnirs-data-analysis-pipeline.html#cb14-2" tabindex="-1"></a><span class="fu">library</span>(broom.mixed)</span></code></pre></div>
+<div id="weighted_beta--1-roitermchroma-1id" class="section level4 hasAnchor" number="1.2.1.1">
+<h4><span class="header-section-number">1.2.1.1</span> Weighted_Beta ~ -1 + ROI:term:Chroma + (1|ID)<a href="fnirs-data-analysis-pipeline.html#weighted_beta--1-roitermchroma-1id" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This analysis is more like ANOVA, but adding the random effect of participants.
+Examine the effect of each ROI on the weighted beta under different conditions and taking into account the difference between HbO and HbR.
+<em>How different brain regions (ROIs) respond differently to hbo and hbr under different experimental conditions (term), respectively; participants as random effect.</em></p>
+<blockquote>
+<p>Beta values were then averaged across the four broad regions of interest. These data were then entered into a robust linear mixed-effects model to evaluate the group-level responses for each stimulus condition divided across four regions of interest.</p>
+</blockquote>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="fnirs-data-analysis-pipeline.html#cb15-1" tabindex="-1"></a>lmm_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(Weighted_Beta <span class="sc">~</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">+</span> ROI<span class="sc">:</span>term<span class="sc">:</span>Chroma <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>ID), <span class="at">data =</span> ROI_results)</span>
+<span id="cb15-2"><a href="fnirs-data-analysis-pipeline.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="fnirs-data-analysis-pipeline.html#cb15-3" tabindex="-1"></a>model_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(lmm_model)</span>
+<span id="cb15-4"><a href="fnirs-data-analysis-pipeline.html#cb15-4" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="fnirs-data-analysis-pipeline.html#cb15-5" tabindex="-1"></a>model_summary1 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(lmm_model)</span>
+<span id="cb15-6"><a href="fnirs-data-analysis-pipeline.html#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="fnirs-data-analysis-pipeline.html#cb15-7" tabindex="-1"></a>model_summary1 <span class="ot">&lt;-</span> model_summary1 <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="fnirs-data-analysis-pipeline.html#cb15-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p.value =</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(estimate <span class="sc">/</span> std.error))))</span></code></pre></div>
+<p>Shader, M. J., Luke, R., Gouailhardou, N., &amp; McKay, C. M. (2021). The use of broad vs restricted regions of interest in functional near-infrared spectroscopy for measuring cortical activation to auditory-only and visual-only speech. Hearing Research, 406, 108256. <a href="https://doi.org/10.1016/j.heares.2021.108256" class="uri">https://doi.org/10.1016/j.heares.2021.108256</a></p>
+</div>
+<div id="channel_data-valance-acc-art-1-id-1-channelid" class="section level4 hasAnchor" number="1.2.1.2">
+<h4><span class="header-section-number">1.2.1.2</span> channel_data ~ Valance + ACC + ART + (1 | ID) + (1 | Channel:ID)<a href="fnirs-data-analysis-pipeline.html#channel_data-valance-acc-art-1-id-1-channelid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>(1 | Channel:ID)</code> is the random effect associated with the intercept for each channel within-subject. Each channel (Channel) for each participant (ID) has its own different random intercept: it is assumed that the responses for each channel may be different for each person.</p>
+<p>Theoretically you could add other conditions (or main effects), interaction effects, and random effects, and then trim the model based on whether or not they are significant, but this is pretty data-driven.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="fnirs-data-analysis-pipeline.html#cb16-1" tabindex="-1"></a>long_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="fnirs-data-analysis-pipeline.html#cb16-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">all_of</span>(channel_columns), </span>
+<span id="cb16-3"><a href="fnirs-data-analysis-pipeline.html#cb16-3" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Channel&quot;</span>, </span>
+<span id="cb16-4"><a href="fnirs-data-analysis-pipeline.html#cb16-4" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;channel_data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="fnirs-data-analysis-pipeline.html#cb17-1" tabindex="-1"></a>lmm_model2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(channel_data <span class="sc">~</span> Valance <span class="sc">+</span> ACC <span class="sc">+</span> ART <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> ID) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Channel<span class="sc">:</span>ID), <span class="at">data =</span> long_data)</span></code></pre></div>
+<pre><code>## Warning: Some predictor variables are on very different scales: consider
+## rescaling</code></pre>
+<pre><code>## Warning in checkConv(attr(opt, &quot;derivs&quot;), opt$par, ctrl = control$checkConv, : Model is nearly unidentifiable: very large eigenvalue
+##  - Rescale variables?</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="fnirs-data-analysis-pipeline.html#cb20-1" tabindex="-1"></a>lmm_summary2 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(lmm_model2)</span>
+<span id="cb20-2"><a href="fnirs-data-analysis-pipeline.html#cb20-2" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="fnirs-data-analysis-pipeline.html#cb20-3" tabindex="-1"></a>LMM_results <span class="ot">&lt;-</span> lmm_summary2 <span class="sc">%&gt;%</span></span>
+<span id="cb20-4"><a href="fnirs-data-analysis-pipeline.html#cb20-4" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate, std.error, statistic) <span class="sc">%&gt;%</span></span>
+<span id="cb20-5"><a href="fnirs-data-analysis-pipeline.html#cb20-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p.value =</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(statistic))), </span>
+<span id="cb20-6"><a href="fnirs-data-analysis-pipeline.html#cb20-6" tabindex="-1"></a>         <span class="at">significant =</span> p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span>
+<span id="cb20-7"><a href="fnirs-data-analysis-pipeline.html#cb20-7" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="fnirs-data-analysis-pipeline.html#cb20-8" tabindex="-1"></a><span class="fu">head</span>(LMM_results, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 6
+##   term            estimate  std.error statistic p.value significant
+##   &lt;chr&gt;              &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;      
+## 1 (Intercept)     -3.42     0.241        -14.1   0      TRUE       
+## 2 ValanceNeutFace -0.111    0.0442        -2.52  0.0117 TRUE       
+## 3 ValancePlace    -0.545    0.0448       -12.2   0      TRUE       
+## 4 ValancePosFace  -0.726    0.0440       -16.5   0      TRUE       
+## 5 ACC              2.88     0.213         13.5   0      TRUE       
+## 6 ART              0.00120  0.0000955     12.6   0      TRUE       
+## 7 sd__(Intercept)  1.44    NA             NA    NA      NA         
+## 8 sd__(Intercept)  0.494   NA             NA    NA      NA         
+## 9 sd__Observation 20.1     NA             NA    NA      NA</code></pre>
+<p>Cakar, S., &amp; Gokalp Yavuz, F. (2023). Nested and robust modeling techniques for fNIRS data with demographics and experiment related factors in n-back task. Neuroscience Research, 186, 59-72. <a href="https://doi.org/10.1016/j.neures.2022.10.007" class="uri">https://doi.org/10.1016/j.neures.2022.10.007</a></p>
+<p>You can replace <code>channel_data</code> with channels for ROI. We can include other covariates, such as sex, to do further analysis for ROI to compare different conditions.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="fnirs-data-analysis-pipeline.html#cb22-1" tabindex="-1"></a>ROI_results_compare <span class="ot">&lt;-</span> ROI_results <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="fnirs-data-analysis-pipeline.html#cb22-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(ROI, <span class="st">&quot;Inferior_frontal_R&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="fnirs-data-analysis-pipeline.html#cb22-3" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;ValanceNeutFace&quot;</span>, <span class="st">&quot;ValancePlace&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-4"><a href="fnirs-data-analysis-pipeline.html#cb22-4" tabindex="-1"></a>  <span class="fu">filter</span>(Chroma <span class="sc">==</span> <span class="st">&quot;hbo&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-5"><a href="fnirs-data-analysis-pipeline.html#cb22-5" tabindex="-1"></a>  <span class="fu">group_by</span>(ID) <span class="sc">%&gt;%</span></span>
+<span id="cb22-6"><a href="fnirs-data-analysis-pipeline.html#cb22-6" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-7"><a href="fnirs-data-analysis-pipeline.html#cb22-7" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb22-8"><a href="fnirs-data-analysis-pipeline.html#cb22-8" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="fnirs-data-analysis-pipeline.html#cb22-9" tabindex="-1"></a><span class="fu">print</span>(ROI_results_compare)</span></code></pre></div>
+<pre><code>## # A tibble: 104 × 9
+##    term            Chroma Weighted_Beta    se      t   dfe p         ROI      ID
+##    &lt;chr&gt;           &lt;chr&gt;          &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;
+##  1 ValanceNeutFace hbo           -5.54   2.69 -2.06   2779 0.03941   Infe…  1001
+##  2 ValancePlace    hbo           -3.97   2.70 -1.47   2779 0.14196   Infe…  1001
+##  3 ValanceNeutFace hbo            4.47   2.33  1.92   2799 0.05498   Infe…  1003
+##  4 ValancePlace    hbo           -4.40   2.34 -1.88   2799 0.06051   Infe…  1003
+##  5 ValanceNeutFace hbo            4.37   2.53  1.73   2781 0.0843003 Infe…  1006
+##  6 ValancePlace    hbo           -3.17   2.54 -1.25   2781 0.2124539 Infe…  1006
+##  7 ValanceNeutFace hbo            1.83   2.84  0.645  3350 0.51884   Infe…  1011
+##  8 ValancePlace    hbo            5.03   2.86  1.76   3350 0.07840   Infe…  1011
+##  9 ValanceNeutFace hbo           -0.886  2.90 -0.306  3221 0.759945… Infe…  1018
+## 10 ValancePlace    hbo           -1.60   2.91 -0.551  3221 0.581978… Infe…  1018
+## # ℹ 94 more rows</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="fnirs-data-analysis-pipeline.html#cb24-1" tabindex="-1"></a>lmm_model_compare <span class="ot">&lt;-</span> <span class="fu">lmer</span>(Weighted_Beta <span class="sc">~</span> term <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> ID), <span class="at">data =</span> ROI_results_compare)</span></code></pre></div>
+<pre><code>## boundary (singular) fit: see help(&#39;isSingular&#39;)</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="fnirs-data-analysis-pipeline.html#cb26-1" tabindex="-1"></a><span class="fu">summary</span>(lmm_model_compare)</span></code></pre></div>
+<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
+## Formula: Weighted_Beta ~ term + (1 | ID)
+##    Data: ROI_results_compare
+## 
+## REML criterion at convergence: 603.3
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.4520 -0.5756 -0.0736  0.6715  2.8783 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  ID       (Intercept)  0.00    0.000   
+##  Residual             20.08    4.481   
+## Number of obs: 104, groups:  ID, 52
+## 
+## Fixed effects:
+##                  Estimate Std. Error t value
+## (Intercept)        1.3654     0.6214   2.197
+## termValancePlace  -1.4838     0.8788  -1.689
+## 
+## Correlation of Fixed Effects:
+##             (Intr)
+## termVlncPlc -0.707
+## optimizer (nloptwrap) convergence code: 0 (OK)
+## boundary (singular) fit: see help(&#39;isSingular&#39;)</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="fnirs-data-analysis-pipeline.html#cb28-1" tabindex="-1"></a><span class="fu">tidy</span>(lmm_model_compare)</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 6
+##   effect   group    term             estimate std.error statistic
+##   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 fixed    &lt;NA&gt;     (Intercept)          1.37     0.621      2.20
+## 2 fixed    &lt;NA&gt;     termValancePlace    -1.48     0.879     -1.69
+## 3 ran_pars ID       sd__(Intercept)      0       NA         NA   
+## 4 ran_pars Residual sd__Observation      4.48    NA         NA</code></pre>
+</div>
+<div id="channel_data-game-valance-1-id" class="section level4 hasAnchor" number="1.2.1.3">
+<h4><span class="header-section-number">1.2.1.3</span> channel_data ~ Game + Valance + (1 | ID)<a href="fnirs-data-analysis-pipeline.html#channel_data-game-valance-1-id" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Still a little more advanced, GLM examines the effects of each experimental condition with participants on each channel from a holistic perspective.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="fnirs-data-analysis-pipeline.html#cb30-1" tabindex="-1"></a>results_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb30-2"><a href="fnirs-data-analysis-pipeline.html#cb30-2" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="fnirs-data-analysis-pipeline.html#cb30-3" tabindex="-1"></a><span class="cf">for</span> (channel <span class="cf">in</span> channel_columns) {</span>
+<span id="cb30-4"><a href="fnirs-data-analysis-pipeline.html#cb30-4" tabindex="-1"></a>    model_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href="fnirs-data-analysis-pipeline.html#cb30-5" tabindex="-1"></a>        <span class="fu">select</span>(Valance, <span class="sc">!!</span><span class="fu">sym</span>(channel), ID) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="fnirs-data-analysis-pipeline.html#cb30-6" tabindex="-1"></a>        <span class="fu">rename</span>(<span class="at">channel_data =</span> <span class="sc">!!</span><span class="fu">sym</span>(channel))</span>
+<span id="cb30-7"><a href="fnirs-data-analysis-pipeline.html#cb30-7" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="fnirs-data-analysis-pipeline.html#cb30-8" tabindex="-1"></a>    lmm_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(channel_data <span class="sc">~</span> Valance <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> ID), <span class="at">data =</span> model_data)</span>
+<span id="cb30-9"><a href="fnirs-data-analysis-pipeline.html#cb30-9" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="fnirs-data-analysis-pipeline.html#cb30-10" tabindex="-1"></a>    lmm_summary <span class="ot">&lt;-</span> <span class="fu">tidy</span>(lmm_model)</span>
+<span id="cb30-11"><a href="fnirs-data-analysis-pipeline.html#cb30-11" tabindex="-1"></a></span>
+<span id="cb30-12"><a href="fnirs-data-analysis-pipeline.html#cb30-12" tabindex="-1"></a>    lmm_summary <span class="ot">&lt;-</span> lmm_summary <span class="sc">%&gt;%</span></span>
+<span id="cb30-13"><a href="fnirs-data-analysis-pipeline.html#cb30-13" tabindex="-1"></a>        <span class="fu">select</span>(term, estimate, std.error, statistic) <span class="sc">%&gt;%</span></span>
+<span id="cb30-14"><a href="fnirs-data-analysis-pipeline.html#cb30-14" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">p.value =</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(statistic))), </span>
+<span id="cb30-15"><a href="fnirs-data-analysis-pipeline.html#cb30-15" tabindex="-1"></a>               <span class="at">significant =</span> p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>,</span>
+<span id="cb30-16"><a href="fnirs-data-analysis-pipeline.html#cb30-16" tabindex="-1"></a>               <span class="at">Channel =</span> channel)</span>
+<span id="cb30-17"><a href="fnirs-data-analysis-pipeline.html#cb30-17" tabindex="-1"></a></span>
+<span id="cb30-18"><a href="fnirs-data-analysis-pipeline.html#cb30-18" tabindex="-1"></a>    results_list[[channel]] <span class="ot">&lt;-</span> lmm_summary</span>
+<span id="cb30-19"><a href="fnirs-data-analysis-pipeline.html#cb30-19" tabindex="-1"></a>}</span>
+<span id="cb30-20"><a href="fnirs-data-analysis-pipeline.html#cb30-20" tabindex="-1"></a></span>
+<span id="cb30-21"><a href="fnirs-data-analysis-pipeline.html#cb30-21" tabindex="-1"></a>results_each_channel <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(results_list)</span>
+<span id="cb30-22"><a href="fnirs-data-analysis-pipeline.html#cb30-22" tabindex="-1"></a><span class="fu">head</span>(results_each_channel, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 7
+##    term            estimate std.error statistic      p.value significant Channel
+##    &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;lgl&gt;       &lt;chr&gt;  
+##  1 (Intercept)       0.0343    0.0666     0.515  0.606       FALSE       S1_D1 …
+##  2 ValanceNegFace    0.621     0.341      1.82   0.0686      FALSE       S1_D1 …
+##  3 ValanceNeutFace   1.40      0.341      4.11   0.0000394   TRUE        S1_D1 …
+##  4 ValancePlace     -1.15      0.344     -3.34   0.000824    TRUE        S1_D1 …
+##  5 ValancePosFace   -1.71      0.338     -5.05   0.000000442 TRUE        S1_D1 …
+##  6 sd__(Intercept)   0        NA         NA     NA           NA          S1_D1 …
+##  7 sd__Observation  24.2      NA         NA     NA           NA          S1_D1 …
+##  8 (Intercept)       0.0492    0.0623     0.791  0.429       FALSE       S1_D8 …
+##  9 ValanceNegFace   -0.560     0.318     -1.76   0.0783      FALSE       S1_D8 …
+## 10 ValanceNeutFace   1.51      0.318      4.73   0.00000220  TRUE        S1_D8 …</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="linear-and-non-linear-sem.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
